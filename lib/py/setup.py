@@ -102,7 +102,7 @@ def run_setup(with_binary):
     tornado_deps = ['tornado>=4.0']
     twisted_deps = ['twisted']
 
-    setup(name='thrift',
+    setup(name='thrift-iomete',
           version='0.22.0',
           description='Python bindings for the Apache Thrift RPC system',
           long_description=read_file("README.md"),
