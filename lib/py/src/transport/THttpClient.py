@@ -110,11 +110,12 @@ class THttpClient(TTransportBase):
             self.__http = http.client.HTTPConnection(self.host, self.port,
                                                      timeout=self.__timeout)
         elif self.scheme == 'https':
-            self.__http = http.client.HTTPSConnection(self.host, self.port,
-                                                      key_file=self.keyfile,
-                                                      cert_file=self.certfile,
-                                                      timeout=self.__timeout,
-                                                      context=self.context)
+            self.__http = http.client.HTTPSConnection(
+                self.host,
+                self.port,
+                timeout=self.__timeout,
+                context=self.context
+            )
         if self.using_proxy():
             self.__http.set_tunnel(self.realhost, self.realport,
                                    {"Proxy-Authorization": self.proxy_auth})
